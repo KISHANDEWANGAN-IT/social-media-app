@@ -1,8 +1,11 @@
 import React from "react";
 import "./Rightbar.css";
 import Gift from "../images/gift.png";
-import Ad1 from "../images/reactjs.svg";
-import Ad2 from "../images/dsa.jpg";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import {Images} from '../carouselData'
+
 
 function Rightbar() {
   return (
@@ -14,10 +17,22 @@ function Rightbar() {
         </span>
       </div>
       <div className="adContainer">
-        <img className="ad-img" src={Ad1} alt="" />
-        <img className="ad-img" src={Ad2} alt="" />
+        <Slider style={{width:'23rem',marginTop:'2rem'}} autoplay autoplaySpeed={2000} >
+    {Images.map((item, idx) => {
+          return (
+            <div key={item.id}>
+              <div className="carousel-img">
+                <img src={item.img} alt="" />
+              </div>
+            </div>
+          );
+        })}
+    </Slider>
+                
+                
       </div>
     </div>
+       
   );
 }
 
