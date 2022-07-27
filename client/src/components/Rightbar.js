@@ -14,10 +14,22 @@ function Rightbar() {
         </span>
       </div>
       <div className="adContainer">
-        <img className="ad-img" src={Ad1} alt="" />
-        <img className="ad-img" src={Ad2} alt="" />
+        <Slider style={{width:'23rem',marginTop:'2rem'}} autoplay autoplaySpeed={2000} >
+    {Images.map((item, idx) => {
+          return (
+            <div key={item.id}>
+              <div className="carousel-img">
+                <img src={item.img} alt="" />
+              </div>
+            </div>
+          );
+        })}
+    </Slider>
+                
+                
       </div>
     </div>
+       
   );
 }
 
